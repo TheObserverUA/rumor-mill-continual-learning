@@ -118,6 +118,12 @@ To prevent premature deletion of breakthrough ideas by a single critic—or fals
 
 ## 7. Quick Simulation
 
+## 7.1. Benchmarks & Economic Efficiency (ROI)
+
+Stress-test metrics across **1,000 simulated scenarios** (bot attacks, viral hype, polarized debates, and niche expert insights) along with a breakdown of **token cost savings (~80%)** and enterprise ROI are available in the dedicated report:
+
+* **[View Simulation Benchmarks & Economic ROI Analysis (`BENCHMARK_AND_ROI.md`)](./BENCHMARK_AND_ROI.md)**
+
 To run the standalone Python proof-of-concept demonstrating thalamic gating, bot-spike pruning, and stochastic jury resolution:
 
     python rumor_mill_sim.py
