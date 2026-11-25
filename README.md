@@ -99,6 +99,13 @@ To run the standalone Python proof-of-concept demonstrating thalamic gating, bot
 
     python rumor_mill_sim.py
 
+
+## 8. License & Attribution
+
+* **Architecture & Conceptual RFC (`README.md`):** Licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org). You are free to share, cite, and build upon this architecture for any purpose, provided explicit credit is given to the original author (**TheObserverUA**).
+* **Simulation Code (`rumor_mill_sim.py`):** Licensed under the **MIT License** (or **Apache License 2.0**) to allow frictionless testing and integration by developers.
+
+
 ---
 
 *Feedback, critiques, and experimental implementations are welcome via Issues or Pull Requests.*
