@@ -95,6 +95,13 @@ To handle emotionally charged viral claims and unresolvable 50/50 edge cases wit
 2. **Decay Rates:** What half-life should be assigned to unverified `RUMOR` entries before automatic microglial pruning occurs?
 3. **Privacy Guarantees:** Ensuring mathematical zero-leakage of proprietary user context during abstraction into generalized `RUMOR` vectors.
 
+## 7. Quick Simulation
+
+To run the standalone Python proof-of-concept demonstrating thalamic gating, bot-spike pruning, and stochastic jury resolution:
+
+```bash
+python rumor_mill_sim.py
+
 ---
 
 *Feedback, critiques, and experimental implementations are welcome via Issues or Pull Requests.*
