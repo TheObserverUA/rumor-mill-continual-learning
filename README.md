@@ -72,6 +72,27 @@ To handle emotionally charged viral claims and unresolvable 50/50 edge cases wit
 * **Temporal Timeout (Emotional Cooldown):** If an incoming `RUMOR` triggers high emotional volatility or coordinated panic spikes, the system enforces a mandatory quarantine delay (`Cooldown_Interval`) before any cross-probing occurs. This prevents reactive human outrage from distorting the validation signal, allowing discourse to stabilize before testing.
 * **Stochastic Human Jury (Algorithmic Sortition):** When adversarial cross-probing yields an exact parity deadlock (50/50 split) on subjective or high-stakes ambiguity, deterministic logic halts to prevent algorithmic bias. Instead, the system samples a small, anonymized, cross-cultural cohort of users with high *Exploratory Curiosity* scores and aggregates their independent reasoning to resolve the tie without hardcoding a single viewpoint.
 
+### 4.5. Synaptic Summation & Threshold Integration (EPSP / IPSP Scoring)
+
+Single-shot binary validation is insufficient for real-world human interactions. A user who encounters a genuinely novel idea may react with brief cognitive shock (*"Damn, that's a great idea, I need to think about this"*) and immediately disengage without writing a detailed follow-up. Conversely, an orthogonal skeptic may dismiss an unconventional insight out of hand (*"What kind of nonsense is this?"*) without providing factual refutation.
+
+To prevent premature deletion of breakthrough ideas by a single critic—or false promotion by a single overly enthusiastic user—the quarantine buffer models **biological synaptic integration**:
+
+- **Excitatory Postsynaptic Potentials (EPSP / Positive Weights):**
+  - *Spontaneous Cognitive Disruption* (brief, high-surprise acknowledgment before disengagement): **+0.6**
+  - *Constructive Elaboration* (user builds upon the logic or adds a new "verse" to the idea): **+0.8**
+  - *Polite / Low-Effort Compliance* (e.g., *"interesting"*, *"maybe"*): **+0.1** (negligible impact to filter out sycophancy)
+- **Inhibitory Postsynaptic Potentials (IPSP / Negative Weights):**
+  - *Visceral Skeptical Rejection* (dismissal without factual proof): **-0.6**
+  - *Verified Factual Debunking* (logical or empirical refutation): **-1.5** (triggers immediate pruning)
+- **Action Potential Thresholds & Dormant ("Galileo") State:**
+  - Each `RUMOR` circulates through multiple orthogonal probes, accumulating a net `synaptic_weight`.
+  - **Promotion ($\ge +1.0$):** The cumulative excitatory signal crosses the firing threshold, promoting the entry to `Status: HYPOTHESIS`.
+  - **Immediate Pruning ($\le -1.0$ with factual proof):** Inhibitory signals backed by refutation trigger microglial deletion (`Status: PRUNED`).
+  - **Dormant State (Low-Compute Cold Archive):** Unconventional ideas that face visceral skepticism ($\le -1.0$) *without* factual debunking are not permanently deleted. Instead, they enter a 3-year low-compute `DORMANT` state ("Galileo" mode) to be periodically re-tested as external context matures, while planting cognitive seeds in the minds of early skeptics.
+  - **Deadlock ($\approx 0.0$ after $N$ probes):** High-variance polarization (equal strong `+` and `-` reactions) formally defines the 50/50 tie state, escalating the item to the **Stochastic Human Jury**.
+
+
 ---
 
 ## 5. Biological Parallels Summary
@@ -84,6 +105,8 @@ To handle emotionally charged viral claims and unresolvable 50/50 edge cases wit
 | **Hemispheric Debate** | Orthogonal Follow-Up Probing | Stress-tests ideas against bias and bot manipulation. |
 | **Limbic Regulation** | Temporal Timeout (`Cooldown_Interval`) | Prevents acute emotional panic from corrupting memory consolidation. |
 | **Collective Deliberation** | Stochastic Human Jury | Resolves 50/50 ambiguity without centralized algorithmic bias. |
+| **Synaptic Summation & Dormant Memory** | EPSP/IPSP Weights & Cold Archive | Balances surprise against skepticism and preserves ahead-of-their-time ideas. |
+
 
 ---
 
