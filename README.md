@@ -82,9 +82,7 @@ To handle emotionally charged viral claims and unresolvable 50/50 edge cases wit
 | **Sleep & Microglial Pruning** | Asynchronous Session Cleanup | Purges noise and prevents memory bloat. |
 | **Prefrontal Skepticism** | Quarantine Buffer (`RUMOR` tag) | Prevents premature belief in unverified stimuli. |
 | **Hemispheric Debate** | Orthogonal Follow-Up Probing | Stress-tests ideas against bias and bot manipulation. |
-
 | **Limbic Regulation** | Temporal Timeout (`Cooldown_Interval`) | Prevents acute emotional panic from corrupting memory consolidation. |
-
 | **Collective Deliberation** | Stochastic Human Jury | Resolves 50/50 ambiguity without centralized algorithmic bias. |
 
 ---
@@ -99,10 +97,10 @@ To handle emotionally charged viral claims and unresolvable 50/50 edge cases wit
 
 To run the standalone Python proof-of-concept demonstrating thalamic gating, bot-spike pruning, and stochastic jury resolution:
 
-```bash
-python rumor_mill_sim.py
+    python rumor_mill_sim.py
 
 ---
 
 *Feedback, critiques, and experimental implementations are welcome via Issues or Pull Requests.*
+
 
