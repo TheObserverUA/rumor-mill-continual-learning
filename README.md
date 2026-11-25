@@ -67,6 +67,10 @@ To prevent false data or coordinated bot-farm injection from polluting the share
   * It identifies an active session belonging to a user with an **opposing domain profile** (e.g., a strict skeptic or an engineer from an unrelated field) who exhibits a high *Exploratory Curiosity Index*.
   * At the natural conclusion of that user's primary task, the system appends the `RUMOR` as an **optional, non-intrusive follow-up question**.
   * **Evaluation:** If the orthogonal user dismisses or debunks the premise, the `RUMOR` undergoes *Synaptic Pruning* (deletion). If the user engages constructively and builds upon the logic, the concept survives the stress test and is promoted to `Status: HYPOTHESIS`.
+### 4.4. Safeguard Modules (Emotional Cooldown & Stochastic Jury)
+To handle emotionally charged viral claims and unresolvable 50/50 edge cases without centralizing moral authority:
+* **Temporal Timeout (Emotional Cooldown):** If an incoming `RUMOR` triggers high emotional volatility or coordinated panic spikes, the system enforces a mandatory quarantine delay (`Cooldown_Interval`) before any cross-probing occurs. This prevents reactive human outrage from distorting the validation signal, allowing discourse to stabilize before testing.
+* **Stochastic Human Jury (Algorithmic Sortition):** When adversarial cross-probing yields an exact parity deadlock (50/50 split) on subjective or high-stakes ambiguity, deterministic logic halts to prevent algorithmic bias. Instead, the system samples a small, anonymized, cross-cultural cohort of users with high *Exploratory Curiosity* scores and aggregates their independent reasoning to resolve the tie without hardcoding a single viewpoint.
 
 ---
 
@@ -78,6 +82,9 @@ To prevent false data or coordinated bot-farm injection from polluting the share
 | **Sleep & Microglial Pruning** | Asynchronous Session Cleanup | Purges noise and prevents memory bloat. |
 | **Prefrontal Skepticism** | Quarantine Buffer (`RUMOR` tag) | Prevents premature belief in unverified stimuli. |
 | **Hemispheric Debate** | Orthogonal Follow-Up Probing | Stress-tests ideas against bias and bot manipulation. |
+
+| **Limbic Regulation** | Temporal Timeout (`Cooldown_Interval`) | Prevents acute emotional panic from corrupting memory consolidation. |
+| **Collective Deliberation** | Stochastic Human Jury | Resolves 50/50 ambiguity without centralized algorithmic bias. |
 
 ---
 
