@@ -122,12 +122,15 @@ To run the standalone Python proof-of-concept demonstrating thalamic gating, bot
 
     python rumor_mill_sim.py
 
+
 ## 8. License & Commercial Use
 
-This project is available under a **Dual Licensing** model to support open scientific research while protecting the author's intellectual property:
+This project is licensed under a **Dual Licensing** model to support open research while protecting the author's intellectual property:
 
-* **Open-Source & Research Use (AGPL-3.0 / Non-Commercial):** Free to use, study, and modify for academic research, personal projects, and open-source software, provided that full attribution is given to the original author (**TheObserverUA**) and any derivative works remain open-source under the same terms.
-* **Commercial Use:** Integrating the *Rumor Mill Protocol*, its synaptic weight architecture, or simulation codebase into proprietary, closed-source, or commercial AI systems requires a separate **Commercial License** from the author.
+* **Open-Source & Academic Research (`GNU AGPLv3`):** Free to use, study, and modify for academic research, personal projects, and open-source software, provided that explicit attribution is given to the original author (**TheObserverUA**) and any derivative or network-deployed works remain open-source under the same **AGPL-3.0** terms (see the `LICENSE` file for details).
+* **Proprietary & Commercial Use:** Integrating the *Rumor Mill Protocol*, its synaptic weight architecture, or simulation codebase into closed-source, proprietary, or commercial AI products without opening the source code requires a separate **Commercial License** from the author.
+
+**Commercial Inquiries:** If you represent an enterprise or startup interested in commercial licensing, custom integration, or R&D partnership, please open an Issue in this repository tagged with **`[Commercial Inquiry]`** to establish a private communication channel.
 
 For commercial licensing, enterprise architecture consulting, or partnership inquiries, please contact the author via GitHub Issues.
 
