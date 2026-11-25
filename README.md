@@ -84,6 +84,7 @@ To handle emotionally charged viral claims and unresolvable 50/50 edge cases wit
 | **Hemispheric Debate** | Orthogonal Follow-Up Probing | Stress-tests ideas against bias and bot manipulation. |
 
 | **Limbic Regulation** | Temporal Timeout (`Cooldown_Interval`) | Prevents acute emotional panic from corrupting memory consolidation. |
+
 | **Collective Deliberation** | Stochastic Human Jury | Resolves 50/50 ambiguity without centralized algorithmic bias. |
 
 ---
