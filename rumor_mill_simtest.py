@@ -16,6 +16,7 @@ class MemoryNode:
     is_hype: bool = False
     bot_flag: bool = False
     children: List['MemoryNode'] = field(default_factory=list)
+
 class RumorMillEngine:
     def __init__(self):
         self.quarantine, self.knowledge, self.dormant = [], [], []
@@ -27,50 +28,69 @@ class RumorMillEngine:
         self.quarantine.append(node)
         print(f"[QUARANTINE] Added '{text}' (Parent: {parent.id if parent else 'None'})")
         return node
-
-    def probe(self, node: MemoryNode, reaction: str):
+            def probe(self, node: MemoryNode, reaction: str):
         if node.bot_flag:
             node.status = "PRUNED"
-            self.quarantine.remove(node)
+            if node in self.quarantine:
+                self.quarantine.remove(node)
             print(f"[IMMUNITY] Bot pruned: '{node.content}'")
             return
 
         if node.status == "HYPOTHESIS":
             if reaction == "DEBUNK":
                 node.status = "PRUNED"
-                self.knowledge.remove(node)
+                if node in self.knowledge:
+                    self.knowledge.remove(node)
                 print(f"[LTP OVERRIDE] Factually debunked hypothesis: '{node.content}'")
             else:
                 print(f"[LTP SHIELD] Emotional noise '{reaction}' ignored for verified hypothesis.")
             return
 
+        if reaction == "DEBUNK":
+            node.status = "PRUNED"
+            if node in self.quarantine:
+                self.quarantine.remove(node)
+            if node.parent and node in node.parent.children:
+                node.parent.children.remove(node)
+            print(f"[PRUNED] Factually debunked '{node.id}'. Parent '{node.parent.id if node.parent else 'None'}' safe!")
+            return
+
         delta = WEIGHTS.get(reaction, 0.0)
         if node.is_niche and delta > 0:
             delta *= 2.0
+
         node.weight = round(node.weight + delta, 2)
         node.probes += 1
         threshold = 3.0 if node.is_hype else 1.0
         print(f"[PROBE #{node.probes}] '{node.content[:25]}...' | {reaction} ({delta:+}) -> Net: {node.weight}/{threshold}")
 
-        if reaction == "DEBUNK" and node.weight <= -1.0:
-            node.status = "PRUNED"
-            self.quarantine.remove(node)
-            print(f"[PRUNED] Branch '{node.id}' deleted. Parent '{node.parent.id if node.parent else 'None'}' safe!")
-        elif node.weight >= threshold:
+        if node.weight >= threshold:
             node.status = "HYPOTHESIS"
-            self.quarantine.remove(node)
+            if node in self.quarantine:
+                self.quarantine.remove(node)
             self.knowledge.append(node)
             print(f"[PROMOTED] '{node.content}' -> HYPOTHESIS!")
         elif node.weight <= -1.0:
             node.status = "DORMANT"
-            self.quarantine.remove(node)
+            if node in self.quarantine:
+                self.quarantine.remove(node)
             self.dormant.append(node)
             print(f"[GALILEO] '{node.content}' -> 3-year DORMANT.")
+        elif node.probes >= 4 and -0.4 <= node.weight <= 0.4:
+            votes = [random.choice(["APPROVE", "REJECT"]) for _ in range(5)]
+            ok = votes.count("APPROVE") >= 3
+            node.status = "HYPOTHESIS" if ok else "PRUNED"
+            if node in self.quarantine:
+                self.quarantine.remove(node)
+            if ok:
+                self.knowledge.append(node)
+            print(f"[STOCHASTIC JURY] {votes} -> Verdict: {node.status}")
 
 if __name__ == "__main__":
     eng = RumorMillEngine()
     root = eng.add_rumor("V1", "Base insight: freeze LLM weights")
     branch = eng.add_rumor("V2", "Bad verse: mutate weights on Sundays", parent=root)
+    eng.probe(branch, "ELABORATION")
     eng.probe(branch, "DEBUNK")
     eng.probe(root, "ELABORATION")
     eng.probe(root, "DISRUPTION")
@@ -82,3 +102,4 @@ if __name__ == "__main__":
     hype = eng.add_rumor("H1", "Viral conspiracy rumor", is_hype=True)
     eng.probe(hype, "ELABORATION")
     eng.probe(hype, "ELABORATION")
+
